@@ -1,14 +1,26 @@
 $(function() {
   var postList = [];
 
-  var Post = function(user, title, description){
+  var Post = function(user, title, description, image){
     this.user = user;
     this.title = title;
     this.description = description;
+    this.image = image
   };
 
-  Post.prototype.addPost = function(){
-    postList.push(Post);
+  Post.prototype.render = function() {
+    var elDiv = document.createElement('div');
+    var elUser = document.createElement('p');
+    var elTitle = document.createElement('a');
+    var elDescription = document.createElement('p');
+    var elImage = document.createElement('img');
+    elDiv.appendChild(elUser, elTitle, elDescription, elImage);
+    elUser.innerHTML = this.user;
+    elTitle.innerHTML = this.title;
+    elDescription = this.description;
+    elImage = this.image;
+    return elDiv;
+
   };
 
   var post1 = new Post('DogavanMcnap', 'Eggs', 'I have 10 eggs I just don\'t need'),
@@ -17,6 +29,10 @@ $(function() {
 
   postList.push(post1, post2, post3);
 
+  var createPost = new Post(event.target.PLACE.value,
+    event.target.PLACE.value,
+    event.target.PLACE.value,
+    event.target.PLACE.value);
 
 
 });
