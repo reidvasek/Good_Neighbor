@@ -4,6 +4,31 @@
   <meta charset="utf-8">
   <title>Good Neighbor</title>
 </head>
-
+<body>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function (){
+            $("#click").click(function (){
+                //$(this).animate(function(){
+                    $('html, body').animate({
+                        scrollTop: $("#div1").offset().top
+                    }, 2000);
+                //});
+            });
+        });
+    </script>
+    <button id="click">Click me</button>
+    <div>
+      <img src="http://medias.unifrance.org/medias/123/11/68475/format_page/sean-connery.jpg">
+    </div>
+    <div>
+      <img src="http://img.spokeo.com/public/900-600/sean_connery_1979_01_01.jpg">
+    </div>
+    <div>
+      <img src="http://www.doctormacro.com/Images/Connery,%20Sean/Annex/Annex%20-%20Connery,%20Sean%20(Another%20Time,%20Another%20Place)_01.jpg">
+    </div>
+    <div id="div1">
+      <img src="https://verdoux.files.wordpress.com/2009/03/sean-connery.jpg">
+    </div>
 </body>
 </html>
