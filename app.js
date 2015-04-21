@@ -1,5 +1,7 @@
 $(function() {
   var postList = [];
+  var premadeList = [];
+  var postTable = document.getElementById('postTable');
 
   var Post = function(user, title, description, image){
     this.user = user;
@@ -11,14 +13,14 @@ $(function() {
   Post.prototype.render = function() {
     var elDiv = document.createElement('div');
     var elUser = document.createElement('p');
-    var elTitle = document.createElement('a');
+    var elImage = document.createElement('a');
+    var elTitle = document.createElement('p');
     var elDescription = document.createElement('p');
-    var elImage = document.createElement('img');
     elDiv.appendChild(elUser, elTitle, elDescription, elImage);
     elUser.innerHTML = this.user;
     elTitle.innerHTML = this.title;
-    elDescription = this.description;
-    elImage = this.image;
+    elDescription.innerHTML = this.description;
+    elImage.innerHTML = '<img src' + this.image + '>';
     return elDiv;
 
   };
@@ -29,10 +31,33 @@ $(function() {
 
   postList.push(post1, post2, post3);
 
-  var createPost = new Post(event.target.PLACE.value,
-    event.target.PLACE.value,
-    event.target.PLACE.value,
-    event.target.PLACE.value);
+  var renderPreMade = function() {
+    premadeList.forEach(function(list) {
+      postTable.appendChild(list.render());
+    });
+  };
 
+  $("#click").click(function(event) {
+    event.preventDefault();
 
+    var createPost = new Post(event.target.user.value,
+      event.target.item.value,
+      event.target.desc.value,
+      event.target.img.value);
+
+    postList.push(createPost);
+
+    event.target.user.value = null
+    event.target.item.value = null
+    event.target.desc.value = null
+    event.target.img.value = null
+
+    var renderPostList = function() {
+      postList.forEach(function(post) {
+        postTable.appendChild(post.render());
+      })
+    };
+    renderPostList();
+    postList = [];
+  });
 });
