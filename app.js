@@ -7,7 +7,7 @@ $(function() {
     this.description = description;
   };
 
-  Post.prototype.addPost = function(){
+  Post.prototype.render = function(){
     postList.push(Post);
   };
 
