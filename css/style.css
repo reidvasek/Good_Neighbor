@@ -1,0 +1,78 @@
+/*flexbox***********************************/
+
+
+
+
+/*sections***********************************/
+section{
+	width:100%;
+	height:100vh;
+	border:2px solid;}
+
+#title{
+	text-align: center;
+	font-size:3em;
+	font-family: 'Quicksand', sans-serif;
+	padding-top:2.5%;
+}
+
+#functions{
+	background-color:#2fb9f3;
+}
+#about{
+	background-color:#FFE135;
+}
+#story{
+	background-color:#31f3b1;
+}
+
+footer{
+	background-color:#001f3f;
+	margin-bottom:-40px;
+}
+
+span{
+  background: #222;
+  border-bottom: solid 1px #111;
+  border-top: solid 1px #444;
+  text-align: center;
+
+
+}
+a{		
+		font-size:2em;
+	text-align:center;
+	color:white;
+	padding-top:31vh;
+
+}
+
+#main-header{
+height:60vh;
+background:url('../img/neighbors.jpg') no-repeat center;
+background-size:cover;
+margin-top:-40px;
+}
+
+/*followmebar////////////////////////////////////////////////*/
+.followMeBar {
+  background: #222;
+  border-bottom: solid 1px #111;
+  border-top: solid 1px #444;
+  padding: 1%;
+  position: relative;
+  z-index: 1;
+}
+.followMeBar.fixed {
+  position: fixed;
+  top: 0;
+  width: 98%;
+  z-index: 0;
+}
+.followMeBar.fixed.absolute {
+  position: absolute;
+}
+
+
+
+

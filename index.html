@@ -3,20 +3,23 @@
 <head>
   <meta charset="utf-8">
   <title>Good Neighbor</title>
+   <link rel = "stylesheet" type = "text/css" href = 
+   "css/style.css"></link>
+<link href='http://fonts.googleapis.com/css?family=Quicksand:300' rel='stylesheet' type='text/css'>
 </head>
-<header>
-  <h1>Good Neighbor</h1>
-  <span>
-    <a href="#functions">Log in</a>
-    <a href="#about"> About</a>
-    <a href="#story"> Our Story</a>
-  </span>  
-</header>    
+ <header id="main-header">
+  <h1 id="title">Good Neighbor</h1>
+  <div id="spanbar"><span id="span" class="followMeBar">
+    <a href="#functions" class="smoothScroll">Log in</a>
+    <a href="#about" class="smoothScroll"> About</a>
+    <a href="#story" class="smoothScroll"> Our Story</a>
+  </span> 
+</div>
+ </header>
 <body> 
  <div id="flexbox">
   <section id="functions">
     <p> Here lays the section for functions</p>
-
     <form id="login">
       <h1> Log in </h1>
       <label for="userName">Username:</label>
@@ -38,5 +41,8 @@
   <a href="https://www.facebook.com/goodneighborapp"> <img src="http://heavenlytouchspa.com/wp-content/uploads/like_us_facebookA-copy.gif" height="50px" width="80px"> </a>
   <script src="app.js"></script>
   <script src="deps/jquery.js"></script>
+  <script type="text/javascript" src="followbar.js"></script>
+  <script type="text/javascript" src="smoothscroll.js">
+  </script>
 </footer>  
 </html>
