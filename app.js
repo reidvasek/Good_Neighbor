@@ -1,6 +1,7 @@
 $(function() {
   var postList = [];
   var premadeList = [];
+  var click = document.getElementById('click');
   var postTable = document.getElementById('postTable');
 
   var Post = function(user, title, description, image){
@@ -16,28 +17,41 @@ $(function() {
     var elImage = document.createElement('a');
     var elTitle = document.createElement('p');
     var elDescription = document.createElement('p');
-    elDiv.appendChild(elUser, elTitle, elDescription, elImage);
-    elUser.innerHTML = this.user;
+
+    elDiv.classList.add('postDiv');
+    elUser.classList.add('name');
+    elImage.classList.add('img');
+    elTitle.classList.add('title');
+    elDescription.classList.add('description');
+
+    elDiv.appendChild(elUser);
+    elDiv.appendChild(elTitle);
+    elDiv.appendChild(elDescription);
+    elDiv.appendChild(elImage);
+
+    elUser.innerHTML= this.user;
     elTitle.innerHTML = this.title;
     elDescription.innerHTML = this.description;
-    elImage.innerHTML = '<img src' + this.image + '>';
+    elImage.innerHTML = '<img src=' + this.image + '>';
     return elDiv;
-
   };
 
-  var post1 = new Post('DogavanMcnap', 'Eggs', 'I have 10 eggs I just don\'t need'),
-        post2 = new Post('John', 'Wrench', 'I have a wrench I don\'t need if anyone wants it?'),
-        post3 = new Post('Fred', 'Bananas', 'I bought these bananas for a smoothie but I only needed two! I\'ve got 3 left!');
+  window.addEventListener('load', function(event) {
+    var post1 = new Post('DogavanMcnap', 'Eggs', 'I have 10 eggs I just don\'t need', 'http://aka.weightwatchers.com/images/1033/dynamic/GCMSImages/Egg_000001615195_main.jpg'),
+          post2 = new Post('John', 'Wrench', 'I have a wrench I don\'t need if anyone wants it?', 'http://aka.weightwatchers.com/images/1033/dynamic/GCMSImages/Egg_000001615195_main.jpg'),
+          post3 = new Post('Fred', 'Bananas', 'I bought these bananas for a smoothie but I only needed two! I\'ve got 3 left!', 'http://aka.weightwatchers.com/images/1033/dynamic/GCMSImages/Egg_000001615195_main.jpg');
 
-  postList.push(post1, post2, post3);
+    premadeList.push(post1, post2, post3);
 
-  var renderPreMade = function() {
-    premadeList.forEach(function(list) {
-      postTable.appendChild(list.render());
-    });
-  };
+    var renderPreMade = function() {
+      premadeList.forEach(function(list) {
+        postTable.appendChild(list.render());
+      });
+    };
+    renderPreMade();
+  });
 
-  $("#click").click(function(event) {
+  click.addEventListener('submit', function(event) {
     event.preventDefault();
 
     var createPost = new Post(event.target.user.value,
