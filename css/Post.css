@@ -1,0 +1,27 @@
+.flexcontainer p {
+   display: -webkit-flex;
+   display: flex;
+   -webkit-flex-direction: column;
+   flex-direction: column;
+   -webkit-align-items: left;
+   align-items: left;
+   -webkit-justify-content: left;
+   justify-content: left;
+   width: 80%;
+   padding: 5px;
+   padding-color: green;
+}
+.flexcontainer a {
+   display: -webkit-flex;
+   display: flex;
+   -webkit-flex-direction: row;
+   flex-direction: row;
+   -webkit-align-items: right;
+   align-items: right;
+   -webkit-justify-content: right;
+   justify-content: right;
+   width: 100px;
+   height: 90px;
+   border-radius: 5px;
+   border-color: blue;
+}
