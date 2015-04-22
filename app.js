@@ -1,6 +1,7 @@
 $(function() {
   var postList = [];
   var premadeList = [];
+  var postStorage = [];
   var click = document.getElementById('click');
   var postTable = document.getElementById('postTable');
 
@@ -37,9 +38,9 @@ $(function() {
   };
 
   window.addEventListener('load', function(event) {
-    var post1 = new Post('DogavanMcnap', 'Eggs', 'I have 10 eggs I just don\'t need', 'http://aka.weightwatchers.com/images/1033/dynamic/GCMSImages/Egg_000001615195_main.jpg'),
-          post2 = new Post('John', 'Wrench', 'I have a wrench I don\'t need if anyone wants it?', 'http://aka.weightwatchers.com/images/1033/dynamic/GCMSImages/Egg_000001615195_main.jpg'),
-          post3 = new Post('Fred', 'Bananas', 'I bought these bananas for a smoothie but I only needed two! I\'ve got 3 left!', 'http://aka.weightwatchers.com/images/1033/dynamic/GCMSImages/Egg_000001615195_main.jpg');
+    var post1 = new Post('DogavanMcnap', 'Eggs', 'I have 10 eggs I just don\'t need', 'http://goo.gl/jPjZvU'),
+          post2 = new Post('John', 'Wrench', 'I have a wrench I don\'t need if anyone wants it?', 'http://goo.gl/jPjZvU'),
+          post3 = new Post('Fred', 'Bananas', 'I bought these bananas for a smoothie but I only needed two! I\'ve got 3 left!', 'http://goo.gl/jPjZvU');
 
     premadeList.push(post1, post2, post3);
 
@@ -60,6 +61,7 @@ $(function() {
       event.target.img.value);
 
     postList.push(createPost);
+    postStorage.push(createPost);
 
     event.target.user.value = null
     event.target.item.value = null
@@ -68,7 +70,7 @@ $(function() {
 
     var renderPostList = function() {
       postList.forEach(function(post) {
-        postTable.appendChild(post.render());
+        postTable.insertBefore(post.render(), postTable.firstChild);
       })
     };
     renderPostList();
