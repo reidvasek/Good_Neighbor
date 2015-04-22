@@ -61,7 +61,7 @@ $(function() {
       event.target.img.value);
 
     postList.push(createPost);
-    postStorage.push(createPost);
+    postStorage.push(createPost)
 
     event.target.user.value = null
     event.target.item.value = null
