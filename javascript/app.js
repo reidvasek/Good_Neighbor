@@ -1,6 +1,7 @@
 $(function() {
   var postList = [];
   var premadeList = [];
+  var postStorage = [];
   var click = document.getElementById('click');
   var postTable = document.getElementById('postTable');
 
@@ -60,6 +61,7 @@ $(function() {
       event.target.img.value);
 
     postList.push(createPost);
+    postStorage.push(createPost);
 
     event.target.user.value = null
     event.target.item.value = null
@@ -68,7 +70,7 @@ $(function() {
 
     var renderPostList = function() {
       postList.forEach(function(post) {
-        postTable.appendChild(post.render());
+        postTable.insertBefore(post.render(), postTable.firstChild);
       })
     };
     renderPostList();
