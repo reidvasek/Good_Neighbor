@@ -107,7 +107,8 @@
    width: 400px;
    height: 40px;
    background-color: #DEDEDE;
-   border-radius: 20px;
+   border-bottom-right-radius: 20px;
+   border-top-right-radius: 20px;
 }
 
 #descInput {
