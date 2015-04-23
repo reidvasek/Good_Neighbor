@@ -28,7 +28,7 @@
             }
         });
     }
-    
+
     function calculateDistance()
     {
         try
@@ -36,9 +36,8 @@
             var glatlng1 = new GLatLng(location1.lat, location1.lon);
             var glatlng2 = new GLatLng(location2.lat, location2.lon);
             var miledistance = glatlng1.distanceFrom(glatlng2, 3959).toFixed(1);
-            var kmdistance = (miledistance * 1.609344).toFixed(1);
-
-            document.getElementById('results').innerHTML = '<strong>Address 1: </strong>' + location1.address + '<br /><strong>Address 2: </strong>' + location2.address + '<br /><strong>Distance: </strong>' + miledistance + ' miles (or ' + kmdistance + ' kilometers)';
+            console.log(miledistance)
+            document.getElementById('results').innerHTML = '<strong>Distance from you: </strong>' + miledistance;
         }
         catch (error)
         {
