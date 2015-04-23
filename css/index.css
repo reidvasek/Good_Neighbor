@@ -53,9 +53,16 @@ span{
   border-bottom: solid 1px #111;
   border-top: solid 1px #444;
 }
+.article{
+	width:60%;
+	margin-left:10%;
+	margin-top:12vh;
+	border-style:2px solid;
+
+}
 
 /*Links////////////////////////////*/
-a{		
+a{
 	font-size:2em;
 	color:black;
 	text-align: center;
