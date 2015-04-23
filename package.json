@@ -1,0 +1,23 @@
+{
+  "name": "Good_Neighbor",
+  "version": "1.0.0",
+  "description": "Good Neighbor App",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/reidvasek/Good_Neighbor.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/reidvasek/Good_Neighbor/issues"
+  },
+  "homepage": "https://github.com/reidvasek/Good_Neighbor",
+  "dependencies": {
+    "express": "^4.12.3"
+  },
+  "devDependencies": {}
+}
