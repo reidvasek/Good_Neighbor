@@ -32,9 +32,6 @@
    margin-top:-40px;
 }
 
-
-
-
 #postTable {
     background-color: #FEFEFE;
     font-family: 'Quicksand', sans-serif;
@@ -60,7 +57,8 @@
    align-content: center;
    align-items: center;
    justfity-content: center;
-   margin: 5 5;
+   margin-left: 17%;
+
 }
 
 .inputs {
@@ -110,6 +108,12 @@
    height: 40px;
    background-color: #DEDEDE;
    border-radius: 20px;
+}
+
+#descInput {
+  height: 20px;
+  width: 900px;
+  border-radius: 10px;
 }
 
 img {
