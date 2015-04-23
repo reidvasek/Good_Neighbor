@@ -2,23 +2,33 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Document</title>
+  <title>Listings - Good Neighbor</title>
   <link rel="stylesheet" type="text/css" href="../css/Post.css">
   <script src="http://maps.google.com/maps?file=api&v=2&key=ABQIAAAA7j_Q-rshuWkc8HyFI4V2HxQYPm-xtd00hTQOC0OXpAMO40FHAxT29dNBGfxqMPq5zwdeiDSHEPL89A" type="text/javascript"></script>
+  <link href='http://fonts.googleapis.com/css?family=Quicksand:300' rel='stylesheet' type='text/css'>
 </head>
 <body onload="initialize()">
-  <form action="#" id="click" onsubmit="showLocation(); return false;">
-    <input type="text" name="user" placeholder="Username">
-    <input type="text" name="item" placeholder="Item name">
-    <input type="text" name="desc" placeholder="Description">
-    <input type="text" name="img" placeholder="image">
-     <input type="text" name="address1" placeholder="Location">
-    <button type="submit">Enter</button>
-  </form>
-  <section id="postTable">
-  </section>
-  <script src="../deps/jquery.js"></script>
-  <script src="../javascript/app.js"></script>
-  <script type="text/javascript" src="map.js"></script>
+  <main id="content">
+    <header id="header">Good Neighbor - Listings
+      <div id="spanbar">
+        <span id="span" class="followMeBar">
+          <a href="../index.html" class="smoothScroll">Home</a>
+        </span>
+      </div>
+    </header>
+    <form action="#" id="click" onsubmit="showLocation(); return false;">
+      <input type="text" class="inputs" name="user" placeholder="Username">
+      <input type="text" class="inputs" name="item" placeholder="Item name">
+      <input type="text" class="inputs" name="img" placeholder="Image">
+       <input type="text" class="inputs" name="address1" placeholder="Location">
+      <input type="text" class="inputs" name="desc" placeholder="Description">
+      <button id="formButton" type="submit">Enter</button>
+    </form>
+    <section id="postTable">
+    </section>
+    <script src="../deps/jquery.js"></script>
+    <script src="../javascript/app.js"></script>
+    <script type="text/javascript" src="map.js"></script>
+  </main>
 </body>
 </html>
