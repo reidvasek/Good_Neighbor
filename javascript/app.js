@@ -1,5 +1,5 @@
 // $(function() {
-  var i = 1;
+  var i = 0;
   var postList = [];
   var premadeList = [];
   var postStorage = [];
@@ -22,7 +22,8 @@
     }
 
      function showLocation() {
-        geocoder.getLocations(document.forms[0].address1.value, function (response) {
+        console.log("showLocation");
+        geocoder.getLocations("seattle" || document.forms[0].address1.value, function (response) {
             if (!response || response.Status.code != 200)
             {
                 alert("Sorry, we were unable to geocode the first address");
@@ -47,22 +48,27 @@
     var miledistance;
     function calculateDistance()
     {
+        console.dir(location1);
+        console.dir(location2);
         try
         {
             var glatlng1 = new GLatLng(location1.lat, location1.lon);
             var glatlng2 = new GLatLng(location2.lat, location2.lon);
             miledistance = glatlng1.distanceFrom(glatlng2, 3959).toFixed(1);
+            lLocation.innerHTML = obj.location + miledistance;
         }
         catch (error)
         {
             alert(error);
         }
+        console.log("calculateDistance: "+ miledistance);
+        return miledistance;
     }
 
 
 ///////////////////////////////////////////////////////////////////////////////////
 
-  Post.prototype.render = function() {
+  var renderLocation = function(obj) {
     var elDiv = document.createElement('div');
     var elUser = document.createElement('p');
     var elImage = document.createElement('a');
@@ -83,11 +89,11 @@
     elDiv.appendChild(elImage);
     elDiv.appendChild(elLocation);
 
-    elUser.innerHTML= this.user;
-    elTitle.innerHTML = this.title;
-    elDescription.innerHTML = this.description;
-    elImage.innerHTML = '<img src=' + this.image + '>';
-    elLocation.innerHTML = this.location + miledistance;
+    elUser.innerHTML= obj.user;
+    elTitle.innerHTML = obj.title;
+    elDescription.innerHTML = obj.description;
+    elImage.innerHTML = '<img src=' + obj.image + '>';
+    showLocation()
     return elDiv;
   };
 
@@ -101,10 +107,10 @@
 
     var renderPreMade = function() {
       premadeList.forEach(function(list) {
-        postTable.appendChild(list.render());
+        postTable.appendChild(renderLocation(list));
       });
     };
-    calculateDistance();
+    showLocation();
     renderPreMade();
   });
 
@@ -127,6 +133,7 @@
     event.target.address1.value  = null
 
     var renderPostList = function() {
+        console.log("renderPostList");
       postList.forEach(function(post) {
         postTable.insertBefore(post.render(), postTable.firstChild);
       })
