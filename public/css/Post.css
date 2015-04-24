@@ -128,10 +128,12 @@ img {
 }
 
 #spanbar{
-   margin-top:44vh;
-   margin-right: 150vh;
+   margin-top:39vh;
+   margin-right: 145vh;
 }
-
+#description{
+  width:50%;
+}
 a{
    font-family:'Quicksand', sans-serif;;
 }
