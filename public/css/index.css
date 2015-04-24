@@ -60,7 +60,11 @@ span{
 	border-style:2px solid;
 
 }
-
+#eggman{
+	height:200px;
+	width:300px;
+	margin-left:175px;
+}
 /*Links////////////////////////////*/
 a{
 	font-size:2em;
