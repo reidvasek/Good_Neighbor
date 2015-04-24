@@ -4,10 +4,9 @@
   <meta charset="UTF-8">
   <title>Listings - Good Neighbor</title>
   <link rel="stylesheet" type="text/css" href="../css/Post.css">
-  <script src="http://maps.google.com/maps?file=api&v=2&key=ABQIAAAA7j_Q-rshuWkc8HyFI4V2HxQYPm-xtd00hTQOC0OXpAMO40FHAxT29dNBGfxqMPq5zwdeiDSHEPL89A" type="text/javascript"></script>
   <link href='http://fonts.googleapis.com/css?family=Quicksand:300' rel='stylesheet' type='text/css'>
 </head>
-<body onload="initialize()">
+<body>
   <main id="content">
     <header id="header">Good Neighbor - Listings
       <div id="spanbar">
@@ -20,7 +19,8 @@
       <input type="text" class="inputs" name="user" placeholder="Username">
       <input type="text" class="inputs" name="item" placeholder="Item name">
       <input type="text" class="inputs" name="img" placeholder="Image">
-       <input type="text" class="inputs" name="address1" placeholder="Location">
+       <input type="text" class="inputs" name="loc" placeholder="Location">
+       <input type="text" class="inputs" name="email" placeholder="Email">
       <input type="text" class="inputs" name="desc" placeholder="Description" id="descInput">
       <button id="formButton" type="submit">Enter</button>
     </form>
@@ -28,7 +28,6 @@
     </section>
     <script src="../deps/jquery.js"></script>
     <script src="../javascript/app.js"></script>
-    <script type="text/javascript" src="map.js"></script>
   </main>
 </body>
 </html>

@@ -5,11 +5,13 @@ $(function() {
   var click = document.getElementById('click');
   var postTable = document.getElementById('postTable');
 
-  var Post = function(user, title, description, image){
+  var Post = function(user, title, description, image, location, email){
     this.user = user;
     this.title = title;
     this.description = description;
-    this.image = image
+    this.image = image;
+    this.location = location;
+    this.email = email;
   };
 
   Post.prototype.render = function() {
@@ -18,22 +20,30 @@ $(function() {
     var elImage = document.createElement('a');
     var elTitle = document.createElement('p');
     var elDescription = document.createElement('p');
+    var elLocation = document.createElement('p');
+    var elEmail = document.createElement('p');
 
     elDiv.classList.add('postDiv');
     elUser.classList.add('name');
     elImage.classList.add('img');
     elTitle.classList.add('title');
     elDescription.classList.add('description');
+    elLocation.classList.add('description');
+    elEmail.classList.add('description');
 
     elDiv.appendChild(elUser);
     elDiv.appendChild(elTitle);
     elDiv.appendChild(elDescription);
     elDiv.appendChild(elImage);
+    elDiv.appendChild(elLocation);
+    elDiv.appendChild(elEmail);
 
     elUser.innerHTML= this.user;
     elTitle.innerHTML = this.title;
     elDescription.innerHTML = this.description;
     elImage.innerHTML = '<img src=' + this.image + '>';
+    elLocation.innerHTML = this.location;
+    elEmail.innerHTML = this.email;
     return elDiv;
   };
 
@@ -58,7 +68,9 @@ $(function() {
     var createPost = new Post(event.target.user.value,
       event.target.item.value,
       event.target.desc.value,
-      event.target.img.value);
+      event.target.img.value,
+      event.target.loc.value,
+      event.target.email.value);
 
     postList.push(createPost);
     postStorage.push(createPost);
@@ -67,6 +79,8 @@ $(function() {
     event.target.item.value = null
     event.target.desc.value = null
     event.target.img.value = null
+    event.target.loc.value = null
+    event.target.email.value = null
 
     var renderPostList = function() {
       postList.forEach(function(post) {
